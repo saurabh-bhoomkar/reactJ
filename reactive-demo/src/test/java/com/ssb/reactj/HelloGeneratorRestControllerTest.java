@@ -29,14 +29,14 @@ class HelloGeneratorRestControllerTest {
         assertThat(controller).isNotNull();
         // sending 1 now
         ResponseEntity res1 = controller.sendThemAHello(1);
-        assertThat(res1.getStatusCode()).isEqualByComparingTo(HttpStatus.OK);
+        assertThat(res1.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat((String) res1.getBody()).isEqualTo("Hello");
         // sending 5 now
         ResponseEntity res5 = controller.sendThemAHello(5);
-        assertThat(res5.getStatusCode()).isEqualByComparingTo(HttpStatus.OK);
+        assertThat(res5.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat((String) res5.getBody()).isEqualTo("Hello-Hello-Hello-Hello-Hello");
         // sending 6 now
         ResponseEntity res6 = controller.sendThemAHello(6);
-        assertThat(res6.getStatusCode()).isEqualByComparingTo(HttpStatus.BAD_REQUEST);
+        assertThat(res6.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
     }
 }
